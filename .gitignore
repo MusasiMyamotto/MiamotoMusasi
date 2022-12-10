@@ -1,6 +1,7 @@
-main.py
 venv
-python
+.env
+
+
 .idea
 .vscode
 __pycache__/
