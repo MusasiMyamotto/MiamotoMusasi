@@ -17,8 +17,12 @@ dp = Dispatcher(bot=bot)
 async def start_handler(message: types.Message):
     await bot.send_message(chat_id=message.from_user.id,
                            text=f"Салам алейкум брат {message.from_user.first_name}")
-    await message.answer("This is an answer method")
-    await message.reply("This is a reply method")
+    await bot.send_message(chat_id=message.from_user.id,
+                           text=f"/quiz- викторина")
+    await bot.send_message(chat_id=message.from_user.id,
+                           text=f"/mem- мемчики")
+    await bot.send_message(chat_id=message.from_user.id,
+                           text=f"введи любое число и будет магия")
 
 
 @dp.message_handler(commands=['quiz'])
@@ -204,9 +208,9 @@ async def quiz_6(call: types.CallbackQuery):
 
 @dp.callback_query_handler(text="button_call_6")
 async def quiz_7(call: types.CallbackQuery):
-    markup = InlineKeyboardMarkup()
-    button_call_1 = InlineKeyboardButton("NEXT 7", callback_data="button_call_7")
-    markup.add(button_call_1)
+    #markup = InlineKeyboardMarkup()
+    #button_call_1 = InlineKeyboardButton("NEXT 7", callback_data="button_call_7")
+    #markup.add(button_call_1)
 
     question = "В каком фильме играли эти актёры"
     answers = [
@@ -261,6 +265,21 @@ async def mem(message: types.Message):
         'media/1aa9928b963e3bfbcf99546260f89847.jpeg',
         'media/1cuEOLZGsYZodTSEG9UMtQLAXCY.jpg',
         'media/flat,750x,075,f-pad,750x1000,f8f8f8.jpg',
+        'media/photo_2022-12-10_20-45-40.jpg',
+        'media/photo_2022-12-10_20-45-42.jpg',
+        'media/photo_2022-12-10_20-45-45.jpg',
+        'media/photo_2022-12-10_20-45-46.jpg',
+        'media/photo_2022-12-10_20-45-47.jpg',
+        'media/photo_2022-12-10_20-45-48.jpg',
+        'media/photo_2022-12-10_20-45-49.jpg',
+        'media/photo_2022-12-10_20-45-50.jpg',
+        'media/photo_2022-12-10_20-45-51.jpg',
+        'media/photo_2022-12-10_20-45-52.jpg',
+        'media/photo_2022-12-10_20-45-54.jpg',
+        'media/photo_2022-12-10_20-45-57.jpg',
+        'media/photo_2022-12-10_20-45-58.jpg',
+        'media/photo_2022-12-10_20-46-00.jpg',
+        'media/photo_2022-12-10_20-46-02.jpg',
     )
     photo = open(random.choice(photos), 'rb')
     await bot.send_photo(message.from_user.id, photo=photo)
