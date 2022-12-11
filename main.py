@@ -297,6 +297,13 @@ async def mem(message: types.Message):
         'media/photo_2022-12-11_16-18-54.jpg',
         'media/photo_2022-12-11_16-18-58.jpg',
         'media/photo_2022-12-11_16-19-21.jpg',
+        'media/photo_2022-12-11_16-30-58.jpg',
+        'media/photo_2022-12-11_16-31-00.jpg',
+        'media/photo_2022-12-11_16-31-01.jpg',
+        'media/photo_2022-12-11_16-31-02.jpg',
+        'media/photo_2022-12-11_16-31-03.jpg',
+        'media/photo_2022-12-11_16-31-05.jpg',
+        'media/photo_2022-12-11_16-31-07.jpg',
     )
     photo = open(random.choice(photos), 'rb')
     await bot.send_photo(message.from_user.id, photo=photo)
