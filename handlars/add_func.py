@@ -3,15 +3,6 @@ from config import bot, dp
 import random
 
 
-async def my_video(message: types.Message):
-    videos = (
-        'media/video/aa66205a659a445ea8196e47d4babcbb.mp4',
-    )
-    videos = open(random.choice(videos), 'rb')
-    await bot.send_photo(message.from_user.id, video=videos)
-
-
-
 async def jdm(message: types.Message):
     photos = (
         'media/photo_2022-12-14_21-28-24.jpg',
