@@ -10,7 +10,7 @@ callback.register_handlers_callback(dp)
 add_func.register_handlers_callback(dp)
 admin.register_handlers_admin(dp)
 
-# extra.register_handler_extra(dp)
+extra.register_handler_extra(dp)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)

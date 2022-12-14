@@ -4,7 +4,58 @@ import random
 
 
 
-@dp.message_handler(commands=['bball'])
+#@dp.message_handler(commands=['UFC'])
+async def UFC(message: types.Message):
+    photos = (
+        'media/photo_2022-12-14_20-58-42.jpg',
+        'media/photo_2022-12-14_20-58-43.jpg',
+        'media/photo_2022-12-14_20-58-45.jpg',
+        'media/photo_2022-12-14_20-58-50.jpg',
+        'media/photo_2022-12-14_20-58-52.jpg',
+        'media/photo_2022-12-14_20-58-53.jpg',
+        'media/photo_2022-12-14_20-58-55.jpg',
+        'media/photo_2022-12-14_20-58-56.jpg',
+        'media/photo_2022-12-14_20-59-02.jpg',
+        'media/photo_2022-12-14_20-59-03.jpg',
+        'media/photo_2022-12-14_20-59-05.jpg',
+        'media/photo_2022-12-14_20-59-06.jpg',
+        'media/photo_2022-12-14_20-59-07.jpg',
+        'media/photo_2022-12-14_20-59-08.jpg',
+        'media/photo_2022-12-14_20-59-09.jpg',
+        'media/photo_2022-12-14_20-59-10.jpg',
+        'media/photo_2022-12-14_20-59-11.jpg',
+        'media/photo_2022-12-14_20-59-12.jpg',
+        'media/photo_2022-12-14_20-59-13.jpg',
+        'media/photo_2022-12-14_20-59-14.jpg',
+        'media/photo_2022-12-14_20-59-15.jpg',
+        'media/photo_2022-12-14_20-59-16.jpg',
+        'media/photo_2022-12-14_20-59-17.jpg',
+        'media/photo_2022-12-14_20-59-18.jpg',
+        'media/photo_2022-12-14_20-59-19.jpg',
+        'media/photo_2022-12-14_20-59-39.jpg',
+        'media/photo_2022-12-14_20-59-40.jpg',
+        'media/photo_2022-12-14_20-59-41.jpg',
+        'media/photo_2022-12-14_20-59-42.jpg',
+        'media/photo_2022-12-14_20-59-43.jpg',
+        'media/photo_2022-12-14_20-59-43 (2).jpg',
+        'media/photo_2022-12-14_20-59-44.jpg',
+        'media/photo_2022-12-14_20-59-45.jpg',
+        'media/photo_2022-12-14_20-59-46.jpg',
+        'media/photo_2022-12-14_20-59-47.jpg',
+        'media/photo_2022-12-14_20-59-48.jpg',
+        'media/photo_2022-12-14_20-59-49.jpg',
+        'media/photo_2022-12-14_20-59-50.jpg',
+        'media/photo_2022-12-14_20-59-51.jpg',
+        'media/photo_2022-12-14_20-59-52.jpg',
+    )
+    photo = open(random.choice(photos), 'rb')
+    await bot.send_photo(message.from_user.id, photo=photo)
+
+
+
+
+
+#@dp.message_handler(commands=['bball'])
 async def basketball(message: types.Message):
     photos = (
         'media/photo_2022-12-11_23-52-42.jpg',
@@ -70,7 +121,7 @@ async def basketball(message: types.Message):
     await bot.send_photo(message.from_user.id, photo=photo)
 
 
-@dp.message_handler(commands=['mem'])
+#@dp.message_handler(commands=['mem'])
 async def mem(message: types.Message):
     photos = (
         'media/images(9).jpeg',
@@ -149,3 +200,4 @@ def register_handlers_callback(dp: Dispatcher):
     dp.register_message_handler(basketball, commands=['bball'])
     dp.register_message_handler(mem, commands=['mem'])
     dp.register_message_handler(echo, commands=['math'])
+    dp.register_message_handler(UFC, commands=['UFC'])

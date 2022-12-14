@@ -2,16 +2,6 @@ from aiogram import types, Dispatcher
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from config import bot, dp
 
-
-def register_handlers_callback(dp: Dispatcher):
-    dp.register_callback_query_handler(quiz_2, text="button_call_1")
-    dp.register_callback_query_handler(quiz_3, text="button_call_2")
-    dp.register_callback_query_handler(quiz_4, text="button_call_3")
-    dp.register_callback_query_handler(quiz_5, text="button_call_4")
-    dp.register_callback_query_handler(quiz_6, text="button_call_5")
-    dp.register_callback_query_handler(quiz_7, text="button_call_6")
-
-
 async def quiz_2(call: types.CallbackQuery):
     markup = InlineKeyboardMarkup()
     button_call_1 = InlineKeyboardButton("NEXT 2", callback_data="button_call_2")
@@ -165,7 +155,7 @@ async def quiz_6(call: types.CallbackQuery):
 async def quiz_7(call: types.CallbackQuery):
     markup = InlineKeyboardMarkup()
     button_call_1 = InlineKeyboardButton("NEXT 7", callback_data="button_call_7")
-    markup.add(button_call_1)
+    #markup.add(button_call_1)
 
     question = "В каком фильме играли эти актёры"
     answers = [
@@ -189,6 +179,13 @@ async def quiz_7(call: types.CallbackQuery):
         correct_option_id=1,
         explanation="",
         open_period=15,
-        reply_markup=markup,
+        #reply_markup=markup,
     )
 
+def register_handlers_callback(dp: Dispatcher):
+    dp.register_callback_query_handler(quiz_2, text="button_call_1")
+    dp.register_callback_query_handler(quiz_3, text="button_call_2")
+    dp.register_callback_query_handler(quiz_4, text="button_call_3")
+    dp.register_callback_query_handler(quiz_5, text="button_call_4")
+    dp.register_callback_query_handler(quiz_6, text="button_call_5")
+    dp.register_callback_query_handler(quiz_7, text="button_call_6")
