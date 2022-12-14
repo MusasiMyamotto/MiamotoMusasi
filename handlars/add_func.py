@@ -2,10 +2,90 @@ from aiogram import types, Dispatcher
 from config import bot, dp
 import random
 
-
+async def jdm(message: types.Message):
+    photos = (
+        'media/photo_2022-12-14_21-28-24.jpg',
+        'media/photo_2022-12-14_21-28-25.jpg',
+        'media/photo_2022-12-14_21-28-26.jpg',
+        'media/photo_2022-12-14_21-28-27.jpg',
+        'media/photo_2022-12-14_21-28-27 (2).jpg',
+        'media/photo_2022-12-14_21-28-28.jpg',
+        'media/photo_2022-12-14_21-28-29.jpg',
+        'media/photo_2022-12-14_21-28-29 (2).jpg',
+        'media/photo_2022-12-14_21-28-30.jpg',
+        'media/photo_2022-12-14_21-28-31.jpg',
+        'media/photo_2022-12-14_21-28-31 (2).jpg',
+        'media/photo_2022-12-14_21-28-32.jpg',
+        'media/photo_2022-12-14_21-28-33.jpg',
+        'media/photo_2022-12-14_21-28-33 (2).jpg',
+        'media/photo_2022-12-14_21-28-34.jpg',
+        'media/photo_2022-12-14_21-28-35.jpg',
+        'media/photo_2022-12-14_21-28-35 (2).jpg',
+        'media/photo_2022-12-14_21-28-36.jpg',
+        'media/photo_2022-12-14_21-28-37.jpg',
+        'media/photo_2022-12-14_21-28-37 (2).jpg',
+        'media/photo_2022-12-14_21-28-38.jpg',
+        'media/photo_2022-12-14_21-28-38 (2).jpg',
+        'media/photo_2022-12-14_21-28-39.jpg',
+        'media/photo_2022-12-14_21-28-40.jpg',
+        'media/photo_2022-12-14_21-28-40 (2).jpg',
+        'media/photo_2022-12-14_21-28-41.jpg',
+        'media/photo_2022-12-14_21-28-41 (2).jpg',
+        'media/photo_2022-12-14_21-28-42.jpg',
+        'media/photo_2022-12-14_21-28-43.jpg',
+        'media/photo_2022-12-14_21-28-43 (2).jpg',
+        'media/photo_2022-12-14_21-28-44.jpg',
+        'media/photo_2022-12-14_21-29-11.jpg',
+        'media/photo_2022-12-14_21-29-12.jpg',
+        'media/photo_2022-12-14_21-29-13.jpg',
+        'media/photo_2022-12-14_21-29-14.jpg',
+        'media/photo_2022-12-14_21-29-15.jpg',
+        'media/photo_2022-12-14_21-29-15 (2).jpg',
+        'media/photo_2022-12-14_21-29-16.jpg',
+        'media/photo_2022-12-14_21-29-17.jpg',
+        'media/photo_2022-12-14_21-29-18.jpg',
+        'media/photo_2022-12-14_21-29-22.jpg',
+        'media/photo_2022-12-14_21-29-22 (2).jpg',
+        'media/photo_2022-12-14_21-29-23.jpg',
+        'media/photo_2022-12-14_21-29-24.jpg',
+        'media/photo_2022-12-14_21-29-25.jpg',
+        'media/photo_2022-12-14_21-29-26.jpg',
+        'media/photo_2022-12-14_21-29-27.jpg',
+        'media/photo_2022-12-14_21-29-28.jpg',
+        'media/photo_2022-12-14_21-29-29.jpg',
+        'media/photo_2022-12-14_21-29-30.jpg',
+        'media/photo_2022-12-14_21-29-31.jpg',
+        'media/photo_2022-12-14_21-29-35.jpg',
+        'media/photo_2022-12-14_21-29-36.jpg',
+        'media/photo_2022-12-14_21-29-37.jpg',
+        'media/photo_2022-12-14_21-29-38.jpg',
+        'media/photo_2022-12-14_21-29-38 (2).jpg',
+        'media/photo_2022-12-14_21-29-41.jpg',
+        'media/photo_2022-12-14_21-29-43.jpg',
+        'media/photo_2022-12-14_21-29-46.jpg',
+        'media/photo_2022-12-14_21-29-48.jpg',
+        'media/photo_2022-12-14_21-29-49.jpg',
+        'media/photo_2022-12-14_21-29-50.jpg',
+        'media/photo_2022-12-14_21-29-51.jpg',
+        'media/photo_2022-12-14_21-29-52.jpg',
+        'media/photo_2022-12-14_21-29-53.jpg',
+        'media/photo_2022-12-14_21-29-54.jpg',
+        'media/photo_2022-12-14_21-29-55.jpg',
+        'media/photo_2022-12-14_21-29-56.jpg',
+        'media/photo_2022-12-14_21-29-57.jpg',
+        'media/photo_2022-12-14_21-30-02.jpg',
+        'media/photo_2022-12-14_21-30-03.jpg',
+        'media/photo_2022-12-14_21-30-04.jpg',
+        'media/photo_2022-12-14_21-30-05.jpg',
+        'media/photo_2022-12-14_21-30-06.jpg',
+        'media/photo_2022-12-14_21-30-06 (2).jpg',
+        'media/photo_2022-12-14_21-30-07.jpg',
+    )
+    photo = open(random.choice(photos), 'rb')
+    await bot.send_photo(message.from_user.id, photo=photo)
 
 #@dp.message_handler(commands=['UFC'])
-async def UFC(message: types.Message):
+async def ufc(message: types.Message):
     photos = (
         'media/photo_2022-12-14_20-58-42.jpg',
         'media/photo_2022-12-14_20-58-43.jpg',
@@ -200,4 +280,5 @@ def register_handlers_callback(dp: Dispatcher):
     dp.register_message_handler(basketball, commands=['bball'])
     dp.register_message_handler(mem, commands=['mem'])
     dp.register_message_handler(echo, commands=['math'])
-    dp.register_message_handler(UFC, commands=['UFC'])
+    dp.register_message_handler(ufc, commands=['ufc'])
+    dp.register_message_handler(jdm, commands=['jdm'])
