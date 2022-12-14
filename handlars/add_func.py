@@ -283,4 +283,3 @@ def register_handlers_callback(dp: Dispatcher):
     dp.register_message_handler(echo, commands=['math'])
     dp.register_message_handler(ufc, commands=['ufc'])
     dp.register_message_handler(jdm, commands=['jdm'])
-    dp.register_message_handler(my_video, commands=['video'])
