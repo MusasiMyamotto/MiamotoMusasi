@@ -33,7 +33,7 @@ async def quiz_1(message: types.Message):
         type='quiz',
         correct_option_id=3,
         explanation="Стыдно не знать",
-        open_period=15,
+        #open_period=15,
         reply_markup=markup
     )
 

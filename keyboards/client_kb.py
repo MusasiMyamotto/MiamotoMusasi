@@ -13,6 +13,7 @@ mem_button = KeyboardButton("/mem")
 ufc_button = KeyboardButton("/ufc")
 basketball_button = KeyboardButton("/bball")
 jdm_button = KeyboardButton("/jdm")
+my_video = KeyboardButton("/video")
 
 
 share_location = KeyboardButton("Share location", request_location=True)

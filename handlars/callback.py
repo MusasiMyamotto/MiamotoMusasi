@@ -266,9 +266,6 @@ async def quiz_10(call: types.CallbackQuery):
 
 
 async def quiz_11(call: types.CallbackQuery):
-    markup = InlineKeyboardMarkup()
-    button_call_1 = InlineKeyboardButton("NEXT 12", callback_data="button_call_12")
-    markup.add(button_call_1)
 
     question = "Кто лучший трансформер?"
     answers = [
@@ -292,7 +289,7 @@ async def quiz_11(call: types.CallbackQuery):
         correct_option_id=4,
         explanation="",
         #open_period=15,
-        reply_markup=markup,
+        #reply_markup=markup,
     )
 
 

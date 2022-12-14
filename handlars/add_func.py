@@ -2,6 +2,16 @@ from aiogram import types, Dispatcher
 from config import bot, dp
 import random
 
+
+async def my_video(message: types.Message):
+    videos = (
+        'media/video/aa66205a659a445ea8196e47d4babcbb.mp4',
+    )
+    videos = open(random.choice(videos), 'rb')
+    await bot.send_photo(message.from_user.id, video=videos)
+
+
+
 async def jdm(message: types.Message):
     photos = (
         'media/photo_2022-12-14_21-28-24.jpg',
@@ -282,3 +292,4 @@ def register_handlers_callback(dp: Dispatcher):
     dp.register_message_handler(echo, commands=['math'])
     dp.register_message_handler(ufc, commands=['ufc'])
     dp.register_message_handler(jdm, commands=['jdm'])
+    dp.register_message_handler(my_video, commands=['video'])
