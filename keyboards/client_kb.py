@@ -13,7 +13,7 @@ mem_button = KeyboardButton("/mem")
 ufc_button = KeyboardButton("/ufc")
 basketball_button = KeyboardButton("/bball")
 jdm_button = KeyboardButton("/jdm")
-my_video = KeyboardButton("/video")
+my_video_button = KeyboardButton("/video")
 
 
 share_location = KeyboardButton("Share location", request_location=True)
@@ -21,4 +21,4 @@ share_contact = KeyboardButton("Share contact", request_contact=True)
 
 start_markup.add(start_button, info_button, quiz_button,
                  share_location, share_contact, mem_button,
-                 basketball_button, ufc_button, jdm_button)
+                 basketball_button, ufc_button, jdm_button, my_video_button)
