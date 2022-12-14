@@ -224,9 +224,6 @@ async def quiz_9(call: types.CallbackQuery):
         'Ты шо дурак от куда мне знать',
     ]
 
-    photo = open("media/Без названия (5).jpeg", "rb")
-    await bot.send_photo(call.from_user.id, photo=photo)
-
     await bot.send_poll(
         chat_id=call.from_user.id,
         question=question,
