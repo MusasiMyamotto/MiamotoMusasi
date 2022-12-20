@@ -4,6 +4,7 @@ from aiogram.dispatcher.filters import Text
 from aiogram.dispatcher.filters.state import State, StatesGroup
 from config import bot, ADMINS
 from keyboards.client_kb import submit_markup, cancel_markup
+from database.bot_db import sql_command_insert
 
 
 class FSMAdmin(StatesGroup):
@@ -80,6 +81,7 @@ async def load_group(message: types.Message, state: FSMContext):
 
 async def submit(message: types.Message, state: FSMContext):
     if message.text.lower() == 'да':
+        await sql_command_insert(state)
         await state.finish()
         await bot.send_message(message.from_user.id, "Регистрация завершена")
     elif message.text.lower() == 'нет':
@@ -87,6 +89,8 @@ async def submit(message: types.Message, state: FSMContext):
         await message.answer("Отмена")
     else:
         await message.answer('Не получилось!')
+
+
 
 
 async def cancel_reg(message: types.Message, state: FSMContext):

@@ -2,7 +2,7 @@ from aiogram.utils import executor
 from handlars import client, callback, extra, add_func, admin, fsmAdminMentor
 from config import dp
 import logging
-
+from database.bot_db import sql_create
 
 
 client.register_handlers_client(dp)
@@ -13,6 +13,10 @@ fsmAdminMentor.register_handlers_fsm_anketa(dp)
 
 extra.register_handler_extra(dp)
 
+
+async def on_startup(_):
+    sql_create()
+
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
-    executor.start_polling(dp, skip_updates=False)
+    executor.start_polling(dp, skip_updates=False, on_startup=on_startup)

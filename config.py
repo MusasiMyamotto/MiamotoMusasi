@@ -9,4 +9,4 @@ TOKEN = config("TOKEN")
 
 bot = Bot(TOKEN)
 dp = Dispatcher(bot=bot, storage=storage)
-ADMINS = [5496595509, 908379438]
+ADMINS = [5496595509,]
