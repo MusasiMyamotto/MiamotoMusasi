@@ -14,6 +14,7 @@ ufc_button = KeyboardButton("/ufc")
 basketball_button = KeyboardButton("/bball")
 jdm_button = KeyboardButton("/jdm")
 reg_button = KeyboardButton("/reg")
+math_button = KeyboardButton("/math")
 
 
 share_location = KeyboardButton("Share location", request_location=True)
@@ -21,7 +22,7 @@ share_contact = KeyboardButton("Share contact", request_contact=True)
 
 start_markup.add(start_button, info_button, quiz_button,
                  share_location, share_contact, mem_button,
-                 basketball_button, ufc_button, jdm_button, reg_button)
+                 basketball_button, ufc_button, jdm_button, reg_button, math_button)
 
 cancel_button = KeyboardButton('CANCEL')
 cancel_markup = ReplyKeyboardMarkup(

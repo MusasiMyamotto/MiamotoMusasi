@@ -3,6 +3,7 @@ from config import bot
 import random
 
 
+
 async def jdm(message: types.Message):
     photos = (
         'media/photo_2022-12-14_21-28-24.jpg',

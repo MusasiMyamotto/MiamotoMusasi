@@ -56,6 +56,8 @@ async def dice_game(message: types.Message):
 async def get_random_user(message: types.Message):
     await sql_command_random(message)
 
+
+
 def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(start_handler, commands=['start', 'help'])
     dp.register_message_handler(quiz_1, commands=['quiz'])
