@@ -1,7 +1,7 @@
 import aioschedule
 from aiogram import types, Dispatcher
 from config import bot
-#import asyncio
+import asyncio
 
 
 async def get_chat_id(message: types.Message):
@@ -17,9 +17,9 @@ async def go_to_weekends():
 async def scheduler():
     aioschedule.every().friday.at("20:00").do(go_to_weekends)
 
-    #while True:
-        #await aioschedule.run_pending()
-        #wait asyncio.sleep(2)
+    while True:
+        await aioschedule.run_pending()
+        await asyncio.sleep(2)
 
 
 def register_handlers_notification(dp: Dispatcher):
