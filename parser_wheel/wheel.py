@@ -1,8 +1,6 @@
-from pydoc import html
-
 from bs4 import BeautifulSoup as BS
 import requests
-from pprint import pprint
+
 
 URL = "https://shina.kg/category/legkovye/?ysclid=l9tps4bxe4434265291"
 
