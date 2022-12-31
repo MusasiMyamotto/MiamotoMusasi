@@ -4,7 +4,7 @@ from config import bot
 from keyboards.client_kb import start_markup
 from database.bot_db import sql_command_random
 
-from parser_wheel.wheel import parser_wheels
+from parser_wheel.wheel import ParserWheels
 
 
 
@@ -61,7 +61,7 @@ async def get_random_user(message: types.Message):
     await sql_command_random(message)
 
 async def parsser_wheels(message: types.Message):
-    items = parser_wheels()
+    items = ParserWheels.parser()
     for item in items:
         await bot.send_message(
             message.from_user.id,
