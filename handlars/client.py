@@ -5,7 +5,7 @@ from keyboards.client_kb import start_markup
 from database.bot_db import sql_command_random
 
 from parser_wheel.wheel import ParserWheels
-
+from parser_wheel.anime import ParserAnime
 
 
 
@@ -73,7 +73,17 @@ async def parsser_wheels(message: types.Message):
             )
 
 
-
+async def get_anime(message: types.Message):
+    anime = ParserAnime.parser()
+    for i in anime:
+        await message.answer(
+            f"{i['link']}\n\n"
+            f"{i['title']}\n"
+            f"{i['status']}\n"
+            f"#Y{i['date']}\n"
+            f"#{i['country']}\n"
+            f"#{i['genre']}\n"
+        )
 
 def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(start_handler, commands=['start', 'help'])
@@ -82,3 +92,4 @@ def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(dice_game, commands=['dice'])
     dp.register_message_handler(get_random_user, commands=['get'])
     dp.register_message_handler(parsser_wheels, commands=['wheels'])
+    dp.register_message_handler(get_anime, commands=['anime'])

@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup as BS
 import requests
 
+
+
 class ParserWheels:
     __URL = "https://shina.kg/category/legkovye/?ysclid=l9tps4bxe4434265291"
 
